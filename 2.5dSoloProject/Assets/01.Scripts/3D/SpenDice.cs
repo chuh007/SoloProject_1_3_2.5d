@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class SpenDice : MonoBehaviour
 {
-    [SerializeField] private Rigidbody _rbCompo;
-    
+    private Rigidbody _rbCompo;
+
+    private void Awake()
+    {
+        _rbCompo = GetComponent<Rigidbody>();
+    }
     private void Update()
     {
         if(Input.GetMouseButtonDown(0))
