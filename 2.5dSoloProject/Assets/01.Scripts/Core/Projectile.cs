@@ -10,10 +10,12 @@ public abstract class Projectile : MonoBehaviour
     protected float _timer = 0f;
 
     protected Rigidbody2D _rigidBody;
+    protected Sprite sprite;
 
     protected void Awake()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<Sprite>();
     }
 
     public void ResetItem()

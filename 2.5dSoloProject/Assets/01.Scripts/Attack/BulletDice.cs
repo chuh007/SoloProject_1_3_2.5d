@@ -6,6 +6,7 @@ public class BulletDice : Projectile, IPoolable
 {
     [SerializeField] private float _moveSpeed = 10f;
     [SerializeField] private float _lifeTime = 2f;
+    [SerializeField] private List<Sprite> diceSprites = new List<Sprite>();
 
     private int _damage;
     private Vector2 _fireDirection;
@@ -14,9 +15,12 @@ public class BulletDice : Projectile, IPoolable
     public string PoolName => "BulletDice";
     public GameObject ObjectPrefab => gameObject;
 
+    
+
     public override void InitAndFire(Transform firePosTrm, int damage)
     {
         _damage = damage;
+        transform.GetComponent<SpriteRenderer>().sprite = diceSprites[_damage - 1];
         transform.SetPositionAndRotation(firePosTrm.position, firePosTrm.rotation);
         _fireDirection = firePosTrm.right;
     }

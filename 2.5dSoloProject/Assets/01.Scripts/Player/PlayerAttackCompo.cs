@@ -29,11 +29,19 @@ public class PlayerAttackCompo : MonoBehaviour, IEntityComponent
     {
         Debug.Log("공격이다임마");
         Projectile newBullet = GameManager.Instance.Pop("BulletDice") as Projectile;
+        _damage = RandomDamage();
         newBullet.InitAndFire(ShootPoint, _damage);
     }
+
+    private int RandomDamage()
+    {
+        return UnityEngine.Random.Range(1, 7);
+    }
+
     private void FixedUpdate()
     {
         Vector3 mousePos = Input.mousePosition;
+        mousePos.z = Camera.main.farClipPlane;
         Vector3 point = Camera.main.ScreenToWorldPoint(mousePos);
         Vector2 dir = point - transform.position;
         float angle = MathF.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
