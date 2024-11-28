@@ -18,9 +18,7 @@ public class DiceNumCheck : MonoBehaviour
     {
         for(int i = 0; i < 20; i++)
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(faceCenters[i], faceCenters[i] + faceNormals[i] * 0.5f);
-            if (Physics.Raycast(transform.position, faceNormals[i], 5f, _whatIsGround))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(faceNormals[i]), 0.86f, _whatIsGround))
             {
                 Debug.Log($"맞아따잇{i}번째");
             }

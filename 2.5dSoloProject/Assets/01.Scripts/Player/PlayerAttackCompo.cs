@@ -37,6 +37,6 @@ public class PlayerAttackCompo : MonoBehaviour, IEntityComponent
         Vector3 point = Camera.main.ScreenToWorldPoint(mousePos);
         Vector2 dir = point - transform.position;
         float angle = MathF.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.localRotation = Quaternion.Euler(0,0,angle);
+        transform.localRotation = Quaternion.Euler(0, 0, angle);
     }
 }

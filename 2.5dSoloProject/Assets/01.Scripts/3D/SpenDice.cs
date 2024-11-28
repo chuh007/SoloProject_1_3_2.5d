@@ -14,8 +14,8 @@ public class SpenDice : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            _rbCompo.AddForce(new Vector3(0, 10, 0),ForceMode.Impulse);
-            _rbCompo.AddTorque(new Vector3(1, 1, 1), ForceMode.Impulse);
+            _rbCompo.AddForce(new Vector3(0, 10000, 0),ForceMode.Impulse);
+            _rbCompo.AddTorque(new Vector3(1000, 1000, 1000), ForceMode.Impulse);
         }
     }
 }
