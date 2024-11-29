@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class Pattern : MonoBehaviour
+public abstract class Pattern : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    protected int damage;
+    protected Entity onwer;
 
-    // Update is called once per frame
-    void Update()
+    public virtual void Initialize(Entity entity, PatternData data)
     {
-        
+        onwer = entity;
     }
 }

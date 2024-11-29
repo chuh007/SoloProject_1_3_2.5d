@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Laser : Pattern
+public class Laser : RangePattern
 {
     
 }
