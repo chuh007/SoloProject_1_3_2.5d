@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class RangePattern : Pattern
+public abstract class RangePattern : Pattern
 {
     protected Vector2 hitSize;
     protected float waitTime;
     protected float hitTime;
 
-    public override void Initialize(Entity entity, PatternData data)
+    public virtual void Initialize(Entity entity, RangePatternData data)
     {
-        base.Initialize(entity, data);
+        hitSize = data.hitSize;
+        waitTime = data.waitTime;
+        hitTime = data.hitTime;
+        onwer = entity;
     }
 
 }
