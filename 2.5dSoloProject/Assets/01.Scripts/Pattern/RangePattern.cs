@@ -2,16 +2,22 @@ using UnityEngine;
 
 public abstract class RangePattern : Pattern
 {
+    [Header("Pattern Data")]
+    [SerializeField] protected RangePatternData PatternDataSO;
+
     protected Vector2 hitSize;
     protected float waitTime;
     protected float hitTime;
+    protected int damage;
+    protected MoveToStartPosType type;
 
-    public virtual void Initialize(Entity entity, RangePatternData data)
+    public void InitializeData()
     {
-        hitSize = data.hitSize;
-        waitTime = data.waitTime;
-        hitTime = data.hitTime;
-        onwer = entity;
+        hitSize = PatternDataSO.hitSize;
+        waitTime = PatternDataSO.waitTime;
+        hitTime = PatternDataSO.hitTime;
+        damage = PatternDataSO.damage;
+        type = PatternDataSO.HowToMoveStartPos;
     }
 
 }

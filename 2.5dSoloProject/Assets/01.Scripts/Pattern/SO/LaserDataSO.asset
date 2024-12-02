@@ -15,3 +15,5 @@ MonoBehaviour:
   hitSize: {x: 100, y: 2}
   waitTime: 0.5
   hitTime: 1
+  damage: 5
+  HowToMoveStartPos: 0
