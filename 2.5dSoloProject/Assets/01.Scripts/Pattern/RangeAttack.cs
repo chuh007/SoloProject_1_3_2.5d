@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public abstract class RangePattern : Pattern
+public abstract class RangeAttack : Attack
 {
     [Header("Pattern Data")]
-    [SerializeField] protected RangePatternData PatternDataSO;
+    [SerializeField] protected RangeAttackData PatternDataSO;
 
     protected Vector2 hitSize;
     protected float waitTime;

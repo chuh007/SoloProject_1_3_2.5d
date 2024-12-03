@@ -1,16 +1,8 @@
 using UnityEngine;
 
-public abstract class Pattern : MonoBehaviour
+public class Pattern : MonoBehaviour
 {
-    protected Entity onwer;
-    protected Vector3 StartMovePos;
-    protected float rotate;
-
-    public void Initialize(Vector3 StartMovePos, float rotate)
-    {
-        this.StartMovePos = StartMovePos;
-        this.rotate = rotate;
-    }
-
+    protected float cycleTime;
+    protected float attackDelay;
 
 }

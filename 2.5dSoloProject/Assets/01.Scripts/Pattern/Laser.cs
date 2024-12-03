@@ -1,7 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class Laser : RangePattern
+public class Laser : RangeAttack
 {
     // 임마는 프리펩화 되어서 페턴런처가 생성해줄겨
 

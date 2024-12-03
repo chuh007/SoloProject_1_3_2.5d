@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class ProjectilePattern : Pattern
+public abstract class ProjectileAttack : Attack
 {
     protected float radius;
     protected float MoveSpeed;

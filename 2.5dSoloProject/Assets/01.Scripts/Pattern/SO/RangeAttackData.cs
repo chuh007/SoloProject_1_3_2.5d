@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "RangePatternData", menuName = "SO/PatternData/RangePatternData")]
-public class RangePatternData : ScriptableObject
+public class RangeAttackData : ScriptableObject
 {
     public Vector2 hitSize;
     public float waitTime;
