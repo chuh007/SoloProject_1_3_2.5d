@@ -1,9 +1,16 @@
 using UnityEngine;
 
-public class PatternLauncher : MonoBehaviour
+public class PatternLauncher : MonoBehaviour, IEntityComponent
 {
     [SerializeField] private Attack patternPrefab;
+
     private Transform AttackTrm;
+    private Entity onwer;
+
+    public void Initialize(Entity entity)
+    {
+        onwer = entity;
+    }
 
     private Vector3 RandomPosSetter(RandomSpownPosType type)
     {
@@ -40,6 +47,7 @@ public class PatternLauncher : MonoBehaviour
         patternPrefab.Initialize(AttackTrm.position, AttackTrm.rotation.z);
     }
 
+    
 }
 public enum RandomSpownPosType
 {
