@@ -9,7 +9,7 @@ public abstract class RangeAttack : Attack
     protected float waitTime;
     protected float hitTime;
     protected int damage;
-    protected MoveToStartPosType type;
+    protected MoveToStartPosType moveType;
 
     public void InitializeData()
     {
@@ -17,7 +17,7 @@ public abstract class RangeAttack : Attack
         waitTime = PatternDataSO.waitTime;
         hitTime = PatternDataSO.hitTime;
         damage = PatternDataSO.damage;
-        type = PatternDataSO.HowToMoveStartPos;
+        moveType = PatternDataSO.HowToMoveStartPos;
     }
 
 }

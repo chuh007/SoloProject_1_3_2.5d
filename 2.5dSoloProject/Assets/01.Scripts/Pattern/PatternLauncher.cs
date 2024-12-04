@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class PatternLauncher : MonoBehaviour, IEntityComponent
 {
-    [SerializeField] private Transform AttackTrm;
+    [SerializeField] private Transform attackTrm;
 
     private float cycleStartTime;
     private Entity onwer;
-
 
     private PatternData nowPattern;
 
@@ -15,6 +14,16 @@ public class PatternLauncher : MonoBehaviour, IEntityComponent
     public void Initialize(Entity entity)
     {
         onwer = entity;
+    }
+
+    public void LaunchPattern()
+    {
+        StartCoroutine(PatternAttack());
+    }
+
+    public void GetNextPatternData(PatternData pattern)
+    {
+        nowPattern = pattern;
     }
 
     private Vector3 RandomPosSetter(RandomSpownPosType type)
@@ -49,9 +58,36 @@ public class PatternLauncher : MonoBehaviour, IEntityComponent
         return pos;
     }
 
-    public void LaunchPattern()
+    protected float DirectionSetter(SetDirectionType type)
     {
-        StartCoroutine(PatternAttack());
+        float dir = 0f;
+
+        switch (type)
+        {
+            case SetDirectionType.Random:
+                dir = Random.Range(0, 360f);
+                break;
+            case SetDirectionType.SeeTarget:
+                // TODO
+                break;
+            case SetDirectionType.Up:
+                dir = 90;
+                break;
+            case SetDirectionType.Down:
+                dir = -90;
+                break;
+            case SetDirectionType.Left:
+                dir = 180;
+                break;
+            case SetDirectionType.Right:
+                dir = 0;
+                break;
+            default:
+                throw new System.Exception("Error : Not enum type");
+
+        }
+
+        return dir;
     }
 
 
@@ -61,17 +97,13 @@ public class PatternLauncher : MonoBehaviour, IEntityComponent
         while (nowPattern.cycleTime + cycleStartTime > Time.time)
         {
             yield return new WaitForSeconds(nowPattern.attackDelay);
-            Debug.Log("Spown");
-            Attack attack = Instantiate(nowPattern.AttackPrefab,transform).GetComponent<Attack>(); // TODO 풀메니저로 전환
-            attack.Initialize(RandomPosSetter(nowPattern.spownType),90f);
+            Attack attack = Instantiate(nowPattern.AttackPrefab, attackTrm.transform).GetComponent<Attack>(); // TODO 풀메니저로 전환
+            attack.Initialize(RandomPosSetter(nowPattern.spownType),DirectionSetter(nowPattern.dirType));
             attack.ReadyAttack();
         }
     }
 
-    public void NextPattern(PatternData pattern)
-    {
-        nowPattern = pattern;
-    }
+    
 
 }
 public enum RandomSpownPosType

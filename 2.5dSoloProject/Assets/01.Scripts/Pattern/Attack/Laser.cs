@@ -16,7 +16,15 @@ public class Laser : RangeAttack
 
     public override void ReadyAttack()
     {
-        transform.rotation = Quaternion.Euler(0, 0, rotate);
-        transform.DOMove(StartMovePos, Moveduration);
+        if(moveType == MoveToStartPosType.DoMove)
+        {
+            transform.DOMove(StartMovePos, Moveduration);
+            transform.DORotate(new Vector3(0, 0, rotate), Moveduration);
+        }
+        else
+        {
+            transform.position = StartMovePos;
+            transform.rotation = Quaternion.Euler(0, 0, rotate);
+        }
     }
 }

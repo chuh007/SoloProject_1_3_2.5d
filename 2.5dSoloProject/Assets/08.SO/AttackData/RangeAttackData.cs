@@ -8,9 +8,5 @@ public class RangeAttackData : ScriptableObject
     public float hitTime;
     public int damage;
     public MoveToStartPosType HowToMoveStartPos;
-}
-public enum MoveToStartPosType
-{
-    DoMove,
-    Move
+    public SetDirectionType WhatIsDirection;
 }

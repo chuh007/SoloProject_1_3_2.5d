@@ -16,3 +16,18 @@ public abstract class Attack : MonoBehaviour
 
 
 }
+public enum MoveToStartPosType
+{
+    DoMove,
+    Move
+}
+
+public enum SetDirectionType
+{
+    Random,
+    SeeTarget,
+    Up,
+    Down,
+    Left,
+    Right
+}
