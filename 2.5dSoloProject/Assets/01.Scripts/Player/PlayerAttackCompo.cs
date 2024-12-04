@@ -6,7 +6,6 @@ public class PlayerAttackCompo : MonoBehaviour, IEntityComponent
 {
     [SerializeField] private float _atkCooldown;
     [SerializeField] private int _damage;
-    [SerializeField] private BulletDice _dicePrefab;
     [SerializeField] private Transform ShootPoint;
 
     private Player _player;

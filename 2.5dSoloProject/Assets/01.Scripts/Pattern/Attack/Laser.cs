@@ -27,4 +27,11 @@ public class Laser : RangeAttack
             transform.rotation = Quaternion.Euler(0, 0, rotate);
         }
     }
+
+    private void LaserShoot()
+    {
+        Debug.Log("Laser ½´¿ô");
+        PoolLineRenderer newLine = GameManager.Instance.Pop("LineRenderer") as PoolLineRenderer;
+        newLine.InitAndDrawLine(transform.position, transform.right);
+    }
 }
