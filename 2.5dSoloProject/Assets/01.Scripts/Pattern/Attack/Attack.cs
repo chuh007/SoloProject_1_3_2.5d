@@ -12,5 +12,7 @@ public abstract class Attack : MonoBehaviour
         this.rotate = rotate;
     }
 
+    public abstract void ReadyAttack();
+
 
 }

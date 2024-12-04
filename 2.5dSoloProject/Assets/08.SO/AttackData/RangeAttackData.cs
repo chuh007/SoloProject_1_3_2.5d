@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "RangePatternData", menuName = "SO/PatternData/RangePatternData")]
+[CreateAssetMenu(fileName = "RangeAttackData", menuName = "SO/AttackData/RangeAttackData")]
 public class RangeAttackData : ScriptableObject
 {
     public Vector2 hitSize;
