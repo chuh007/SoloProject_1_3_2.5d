@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Laser2
   m_EditorClassIdentifier: 
   cycleTime: 1
-  attackDelay: 0.1
+  attackDelay: 0.2
   AttackPrefab: {fileID: 2250919070859975448, guid: 0486292c9cd556a4ab70878076e315b7, type: 3}
   spownType: 3
+  dirType: 3

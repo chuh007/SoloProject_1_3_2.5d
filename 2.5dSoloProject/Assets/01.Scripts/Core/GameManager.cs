@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +9,28 @@ public class GameManager : MonoSingleton<GameManager>
 
     [SerializeField] private BulletDice _bullet;
     [SerializeField] private PoolLineRenderer _line;
+    [SerializeField] private Laser _laser;
     private void Awake()
     {
         _pools = new Dictionary<string, Pool>();
         Pool bulletPool = new Pool(_bullet, transform, 15);
         _pools.Add(_bullet.PoolName, bulletPool);
         Pool linePool = new Pool(_line, transform, 10);
+        _pools.Add(_line.PoolName, linePool);
+        Pool laserPool = new Pool(_laser, transform, 10);
+        _pools.Add(_laser.PoolName, laserPool);
+        EventManager.AddListener<PushPoolEvent>(OnPushObj);
+        EventManager.AddListener<PopPoolEvent>(OnPopObj);
+    }
+
+    private void OnPopObj(PopPoolEvent evt)
+    {
+        evt.pop = Pop(evt.popName);
+    }
+
+    private void OnPushObj(PushPoolEvent evt)
+    {
+        Push(evt.push);
     }
 
     public IPoolable Pop(string poolName)
