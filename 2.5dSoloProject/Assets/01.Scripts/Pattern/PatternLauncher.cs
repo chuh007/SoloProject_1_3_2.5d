@@ -33,7 +33,7 @@ public class PatternLauncher : MonoBehaviour, IEntityComponent
         switch (type)
         {
             case RandomSpownPosType.OutBoxRandom:
-                //pos.x = 
+                //pos =  // 추후 작성
                 break;
             case RandomSpownPosType.InBoxRandom:
                 pos.x = Random.Range(-10f, 10f);
@@ -48,7 +48,7 @@ public class PatternLauncher : MonoBehaviour, IEntityComponent
                 pos.y = 9f;
                 break;
             case RandomSpownPosType.HeightRandom:
-                pos.x = Random.Range(0, 2) == 1 ? -15f : 15f;
+                pos.x = Random.Range(0, 1) == 1 ? -9f : 9f;
                 pos.y = Random.Range(-9f, 9f);
                 break;
             default:
@@ -97,14 +97,8 @@ public class PatternLauncher : MonoBehaviour, IEntityComponent
         while (nowPattern.cycleTime + cycleStartTime > Time.time)
         {
             yield return new WaitForSeconds(nowPattern.attackDelay);
-            PopPoolEvent evt = Events.popPoolEvent;
-            evt.popName = "Laser";
-            EventManager.RasiseEvent(evt);
-            IPoolable poolable = evt.pop;
-            Debug.Log(poolable);
-            Attack attack = poolable as Attack;
-            Debug.Log(attack);
-            attack.Initialize(RandomPosSetter(nowPattern.spownType), DirectionSetter(nowPattern.dirType));
+            Attack attack = Instantiate(nowPattern.AttackPrefab, attackTrm.transform).GetComponent<Attack>(); // TODO 풀메니저로 전환
+            attack.Initialize(RandomPosSetter(nowPattern.spownType),DirectionSetter(nowPattern.dirType));
             attack.ReadyAttack();
         }
     }

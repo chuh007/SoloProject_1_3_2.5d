@@ -16,4 +16,3 @@ MonoBehaviour:
   attackDelay: 1
   AttackPrefab: {fileID: 2250919070859975448, guid: 0486292c9cd556a4ab70878076e315b7, type: 3}
   spownType: 2
-  dirType: 2

@@ -47,7 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PatternDataSO: {fileID: 11400000, guid: fde078bc0647b1346b200dbc25d2ee1b, type: 2}
   Moveduration: 0.5
-  newLine: {fileID: 0}
 --- !u!212 &-4087876400226044887
 SpriteRenderer:
   m_ObjectHideFlags: 0

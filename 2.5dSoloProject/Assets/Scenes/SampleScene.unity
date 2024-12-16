@@ -1167,6 +1167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _atkCooldown: 0.2
   _damage: 5
+  _dicePrefab: {fileID: 6645620938771078574, guid: 8f20425c7e26f0649a4330d662472857, type: 3}
   ShootPoint: {fileID: 498953824}
 --- !u!1 &856958343
 GameObject:
@@ -1512,7 +1513,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullet: {fileID: 6645620938771078574, guid: 8f20425c7e26f0649a4330d662472857, type: 3}
   _line: {fileID: 4208719231208351453, guid: 7812208b2d9d0e94f8817e0abb680128, type: 3}
-  _laser: {fileID: 103799186971481570, guid: 0486292c9cd556a4ab70878076e315b7, type: 3}
 --- !u!1 &1374624653
 GameObject:
   m_ObjectHideFlags: 0

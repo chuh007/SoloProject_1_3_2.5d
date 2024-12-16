@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278b8ac7b57215342a4329d6f2b3c030, type: 3}
   m_Name: Laser3
   m_EditorClassIdentifier: 
-  cycleTime: 0.5
-  attackDelay: 0.1
+  cycleTime: 5
+  attackDelay: 1
   AttackPrefab: {fileID: 2250919070859975448, guid: 0486292c9cd556a4ab70878076e315b7, type: 3}
   spownType: 4
-  dirType: 1

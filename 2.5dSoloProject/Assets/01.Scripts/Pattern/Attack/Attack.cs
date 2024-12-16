@@ -6,12 +6,6 @@ public abstract class Attack : MonoBehaviour
     protected Vector3 StartMovePos;
     protected float rotate;
 
-    public void ResetItem()
-    {
-        transform.rotation = Quaternion.identity;
-        transform.position = Vector3.zero;
-    }
-
     public void Initialize(Vector3 StartMovePos, float rotate)
     {
         this.StartMovePos = StartMovePos;
@@ -19,6 +13,7 @@ public abstract class Attack : MonoBehaviour
     }
 
     public abstract void ReadyAttack();
+
 
 }
 public enum MoveToStartPosType
