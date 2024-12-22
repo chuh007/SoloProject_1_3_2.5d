@@ -46,7 +46,7 @@ public class BulletDice : Projectile, IPoolable
     private void DestoryBullet()
     {
         _isDead = true;
-        GameManager.Instance.Push(this);
+        PoolManager.Instance.Push(this);
     }
 
 }

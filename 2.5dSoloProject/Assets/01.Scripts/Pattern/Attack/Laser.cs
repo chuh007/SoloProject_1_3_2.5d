@@ -31,7 +31,7 @@ public class Laser : RangeAttack
     private void LaserShoot()
     {
         Debug.Log("Laser ½´¿ô");
-        PoolLineRenderer newLine = GameManager.Instance.Pop("LineRenderer") as PoolLineRenderer;
+        PoolLineRenderer newLine = PoolManager.Instance.Pop("LineRenderer") as PoolLineRenderer;
         newLine.InitAndDrawLine(transform.position, transform.right);
     }
 }

@@ -27,7 +27,7 @@ public class PlayerAttackCompo : MonoBehaviour, IEntityComponent
     private void Attack()
     {
         Debug.Log("공격이다임마");
-        Projectile newBullet = GameManager.Instance.Pop("BulletDice") as Projectile;
+        Projectile newBullet = PoolManager.Instance.Pop("BulletDice") as Projectile;
         _damage = RandomDamage();
         newBullet.InitAndFire(ShootPoint, _damage);
     }
