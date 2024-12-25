@@ -11,3 +11,14 @@ public enum BossState
     Pattern5, 
     Wait
 }
+
+[BlackboardEnum]
+public enum AtackType
+{
+    Top,
+    Bottom,
+    Left,
+    Right,
+    RandomOutBox,
+    RandomInBox
+}

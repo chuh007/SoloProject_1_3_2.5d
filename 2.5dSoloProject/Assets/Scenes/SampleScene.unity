@@ -416,7 +416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &309200035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1344,7 +1344,6 @@ GameObject:
   - component: {fileID: 1094320576}
   - component: {fileID: 1094320577}
   - component: {fileID: 1094320578}
-  - component: {fileID: 1094320580}
   - component: {fileID: 1094320579}
   m_Layer: 0
   m_Name: Boss
@@ -1418,54 +1417,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1094320575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9d5f331c6f86fa4eb6f7bd742eff207, type: 3}
+  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTrm: {fileID: 895724532}
---- !u!114 &1094320580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094320575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bd80e4ebf780a445b2b81b2557a595a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  usePatternList:
-  - {fileID: 11400000, guid: a71308ef59bdd644081196d2cf256867, type: 2}
-  - {fileID: 11400000, guid: 9198582742238e64a935cae76ee96411, type: 2}
-  - {fileID: 11400000, guid: ab0bc38243d15784789de7c1f6dca629, type: 2}
-  - {fileID: 11400000, guid: 825a75ed9d4c2b044b356112254a04a1, type: 2}
-  SetPattern:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1094320579}
-        m_TargetAssemblyTypeName: PatternLauncher, Assembly-CSharp
-        m_MethodName: GetNextPatternData
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1094320579}
-        m_TargetAssemblyTypeName: PatternLauncher, Assembly-CSharp
-        m_MethodName: LaunchPattern
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_Graph: {fileID: 5116004102167527823, guid: f4975e836bd0c1d4b8478ac759579d0c, type: 2}
+  m_BlackboardVariableOverridesList:
+  - rid: 8263451685163369122
+  m_IsInitialised: 0
+  m_IsStarted: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 8263451685163369122
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        m_Value: {fileID: 1094320575}
 --- !u!1 &1139687211
 GameObject:
   m_ObjectHideFlags: 0
