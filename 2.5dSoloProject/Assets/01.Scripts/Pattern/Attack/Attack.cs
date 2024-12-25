@@ -14,7 +14,11 @@ public abstract class Attack : MonoBehaviour
 
     public abstract void ReadyAttack();
 
-
+    public void ResetItem()
+    {
+        transform.rotation = Quaternion.identity;
+        transform.position = Vector3.zero;
+    }
 }
 public enum MoveToStartPosType
 {

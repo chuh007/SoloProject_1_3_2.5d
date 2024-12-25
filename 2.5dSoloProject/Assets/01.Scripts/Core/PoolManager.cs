@@ -14,6 +14,7 @@ public class PoolManager : MonoSingleton<PoolManager>
         Pool bulletPool = new Pool(_bullet, transform, 15);
         _pools.Add(_bullet.PoolName, bulletPool);
         Pool linePool = new Pool(_line, transform, 10);
+        _pools.Add(_line.PoolName, linePool);
     }
 
     public IPoolable Pop(string poolName)
